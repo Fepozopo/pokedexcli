@@ -10,10 +10,11 @@ func commandMap(cfg *config, args ...string) error {
 	if err != nil {
 		return err
 	}
-	fmt.Print("Location areas:\n")
+	fmt.Print("\nLocation areas:\n")
 	for _, area := range resp.Results {
 		fmt.Printf("- %s\n", area.Name)
 	}
+	fmt.Print("\n")
 	cfg.nextLocationAreaURL = resp.Next
 	cfg.prevLocationAreaURL = resp.Previous
 	return nil
@@ -27,10 +28,11 @@ func commandMapb(cfg *config, args ...string) error {
 	if err != nil {
 		return err
 	}
-	fmt.Print("Location areas:\n")
+	fmt.Print("\nLocation areas:\n")
 	for _, area := range resp.Results {
 		fmt.Printf("- %s\n", area.Name)
 	}
+	fmt.Print("\n")
 	cfg.nextLocationAreaURL = resp.Next
 	cfg.prevLocationAreaURL = resp.Previous
 	return nil

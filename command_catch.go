@@ -19,6 +19,7 @@ func commandCatch(cfg *config, args ...string) error {
 
 	const threshold = 50
 	randNum := rand.Intn(pokemon.BaseExperience)
+	fmt.Printf("Throwing a Pokeball at %s...\n", pokemonName)
 	if randNum > threshold {
 		return fmt.Errorf("%s escaped!\n", pokemonName)
 	}
