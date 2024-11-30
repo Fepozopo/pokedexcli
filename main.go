@@ -3,7 +3,7 @@ package main
 import (
 	"time"
 
-	pokeapi "github.com/Fepozopo/pokedexcli/internal/poke_api"
+	pokeapi "github.com/Fepozopo/pokedexcli/internal/pokeapi"
 )
 
 type config struct {
