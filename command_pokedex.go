@@ -5,6 +5,7 @@ import (
 	"slices"
 )
 
+// commandPokedex lists all the Pokemon in your Pokedex in alphabetical order.
 func commandPokedex(cfg *config, args ...string) error {
 	var pokedex []string
 

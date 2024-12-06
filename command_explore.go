@@ -5,6 +5,7 @@ import (
 	"fmt"
 )
 
+// commandExplore takes a location area name and prints out the Pokemon found in that location area.
 func commandExplore(cfg *config, args ...string) error {
 	if len(args) != 1 {
 		return errors.New("no location area provided\n")

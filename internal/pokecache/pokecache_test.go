@@ -5,6 +5,8 @@ import (
 	"time"
 )
 
+// TestCreateCache verifies that a new Cache object is created successfully.
+// It ensures that the cache is not nil, and panics if the cache is nil.
 func TestCreateCache(t *testing.T) {
 	cache := NewCache(time.Millisecond)
 	if cache.cache == nil {
@@ -12,6 +14,10 @@ func TestCreateCache(t *testing.T) {
 	}
 }
 
+// TestAddGetCache tests the Add and Get methods of the Cache.
+// It verifies that values added to the cache can be successfully retrieved
+// using the corresponding keys. If a key is not found or the retrieved value
+// does not match the expected value, the test will report an error.
 func TestAddGetCache(t *testing.T) {
 	cache := NewCache(time.Millisecond)
 
@@ -47,6 +53,8 @@ func TestAddGetCache(t *testing.T) {
 	}
 }
 
+// TestReap tests that the cache does reap items after the specified interval
+// has passed.
 func TestReap(t *testing.T) {
 	interval := time.Millisecond * 10
 	cache := NewCache(interval)
@@ -62,6 +70,8 @@ func TestReap(t *testing.T) {
 	}
 }
 
+// TestReapFail tests that the cache does not reap items before the specified
+// interval has passed.
 func TestReapFail(t *testing.T) {
 	interval := time.Millisecond * 10
 	cache := NewCache(interval)

@@ -5,6 +5,12 @@ import (
 	"fmt"
 )
 
+// commandInspect displays detailed information about a specified Pokémon
+// from the user's caught Pokémon. It requires exactly one argument, which
+// is the name of the Pokémon to inspect. The function will print the
+// Pokémon's name, height, weight, stats, and types. If the Pokémon is
+// not found in the user's collection, it returns an error indicating that
+// the Pokémon has not been caught.
 func commandInspect(cfg *config, args ...string) error {
 	if len(args) != 1 {
 		return errors.New("no pokemon name provided\n")

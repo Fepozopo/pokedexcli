@@ -13,6 +13,7 @@ type config struct {
 	caughtPokemon       map[string]pokeapi.Pokemon
 }
 
+// main initializes a PokedexCLI application configuration and starts the REPL.
 func main() {
 	cfg := config{
 		pokeapiClient: pokeapi.NewClient(time.Hour),

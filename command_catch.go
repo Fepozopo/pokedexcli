@@ -6,6 +6,11 @@ import (
 	"math/rand"
 )
 
+// commandCatch attempts to catch a Pokemon and add it to the user's Pokedex.
+// A Pokemon is caught if a random number between 0 and the Pokemon's base
+// experience is less than or equal to a threshold of 50. If the Pokemon is
+// caught, it is added to the user's Pokedex. If the Pokemon escapes, an error
+// is returned.
 func commandCatch(cfg *config, args ...string) error {
 	if len(args) != 1 {
 		return errors.New("no pokemon name provided\n")

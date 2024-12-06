@@ -2,6 +2,8 @@ package main
 
 import "testing"
 
+// TestCleanInput checks that the cleanInput function returns the expected output for
+// given input.
 func TestCleanInput(t *testing.T) {
 	cases := []struct {
 		input    string

@@ -7,6 +7,10 @@ import (
 	"net/http"
 )
 
+// GetPokemon fetches a Pokemon's details from PokeAPI by name.
+//
+// Returns a Pokemon struct containing the requested Pokemon's details.
+// Returns an error if the request fails.
 func (c *Client) GetPokemon(pokemonName string) (Pokemon, error) {
 	endpoint := "/pokemon/" + pokemonName
 	fullURL := baseURL + endpoint

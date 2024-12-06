@@ -7,6 +7,12 @@ import (
 	"net/http"
 )
 
+// ListLocationAreas retrieves a list of location areas from the PokeAPI.
+// If a pageURL is provided, it fetches the specific page; otherwise, it
+// fetches the default endpoint. The function first checks the cache for
+// a response. If not cached, it sends a request to the PokeAPI and caches
+// the result. Returns a LocationAreasResp object or an error if the request
+// fails or the response cannot be unmarshaled.
 func (c *Client) ListLocationAreas(pageURL *string) (LocationAreasResp, error) {
 	endpoint := "/location-area"
 	fullURL := baseURL + endpoint
@@ -57,6 +63,13 @@ func (c *Client) ListLocationAreas(pageURL *string) (LocationAreasResp, error) {
 	return locationAreasResp, nil
 }
 
+// GetLocationArea returns a LocationArea object for the given location area name.
+//
+// The request is first checked against the cache. If the cache has a hit, the
+// cached data is unmarshaled into a LocationArea object and returned.
+//
+// If the cache has a miss, the request is sent to the PokeAPI, and the response
+// is unmarshaled into a LocationArea object, cached, and returned.
 func (c *Client) GetLocationArea(locationAreaName string) (LocationArea, error) {
 	endpoint := "/location-area/" + locationAreaName
 	fullURL := baseURL + endpoint
